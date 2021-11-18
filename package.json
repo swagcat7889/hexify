@@ -1,0 +1,9 @@
+{
+  "name": "hexify",
+  "version": "1.0.0",
+  "description": "Hexify everything via piping or cli, using node.js ",
+  "main": "index.js",
+  "keywords": [],
+  "author": "pass the burrito down#4261",
+  "license": "EUPL-1.2-or-later"
+}
