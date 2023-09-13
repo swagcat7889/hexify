@@ -1,6 +1,8 @@
 # hexify
 Hexify everything via piping or cli, using node.js
+
 ## How does this work?
-This project uses the readline module to read from the cli or piping.
+This project reads raw from stdin, converts to a hex string and prints it to the terminal.
+
 ## Will this project be maintained?
-Probably no, but i am planning to make some changes ~~(backwards compatible)~~ *couldn't find a way to make it backwards compatible, so it will be 2.0.0*
+It won't. I might revisit this project in the future.
