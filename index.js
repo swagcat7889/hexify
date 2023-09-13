@@ -1,25 +1,10 @@
-'use strict'
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  terminal: false
-});
-const arg = process.argv[2];
+'use strict';
+const process = require('node:process');
 
-if (arg == '--encode' || arg == '-e') {
-  rl.on('line', function(line){
-      process.stdout.write(Buffer.from(line, 'utf-8').toString('hex'));
-      process.stdout.write('\n');
-  });
-} else if (arg == '--decode' || arg == '-d') {
-    rl.on('line', function(line){
-      process.stdout.write(Buffer.from(line, 'hex').toString());
-      process.stdout.write('\n');
-  });
-} else {
-  rl.on('line', function(line){
-    process.stdout.write(Buffer.from(line, 'utf-8').toString('hex'));
-    process.stdout.write('\n');
-  });
-}
+process.stdin.on('data', async (chunk) => {
+	process.stderr.write(`${chunk.toString('hex')}`);
+});
+
+process.stdin.on('close', async () => {
+	process.stderr.write('\n');
+});
